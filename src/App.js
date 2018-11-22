@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import './App.css';
 import Products from './components/products'
 import Cart from './components/cart';
+import CartView from './components/cartview';
+
+import uuidv1 from 'uuid/v1';
 
 class App extends Component {
   constructor() {
@@ -14,13 +17,13 @@ class App extends Component {
       {
         product: {
           productId: 1,
-          cartId: +new Date(),
+          cartId: uuidv1()
         },
       },
       {
         product: {
           productId: 2,
-          cartId: +new Date(),
+          cartId: uuidv1()
         },
       }
     ],
@@ -85,10 +88,32 @@ class App extends Component {
     ]
   }
 
+  // Fetch product by id
+  getProductById(id) {
+    console.log(`finding product by id ${id}`);
+    let products = this.state.products;
+    let product = products.find((p) => {
+      return (p.id === id);
+    });
+    return product;
+  }
+
+  getAllCartsProduct() {
+    let cartProducts = this.state.cart.map((c) => {
+      return {
+        product: this.getProductById(c.product.productId),
+        cartId: c.product.cartId
+      }
+    });
+    return cartProducts;
+  }
+
   onAddToCart(productId) {
     let newCartItem = {
-      productId: productId,
-      cartId: +new Date()
+      product: {
+        productId: productId,
+        cartId: uuidv1()
+      }
     }
 
     this.setState({
@@ -104,18 +129,7 @@ class App extends Component {
 
           <div className="cart-wrapper">
             <Cart items={this.state.cart} />
-            <div className="cart-view">
-              <div class="arrow-down"></div>
-              <ul className="cart-list">
-                <li><span>Produt One</span> <span>152/-</span></li>
-                <li><span>Produt Two</span> <span>152/-</span></li>
-
-              </ul>
-              <div className="cart-total">
-                Cart Total : <span class="float-right">152/-</span>
-              </div>
-            </div>
-
+            <CartView items={this.getAllCartsProduct()} />
           </div>
 
 
