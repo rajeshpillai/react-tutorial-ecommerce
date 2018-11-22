@@ -90,13 +90,9 @@ ul.product-list .product-item h3.product-title{
     margin-bottom: 10px;
 }
 
-ul.product-list .product-item .cta {
-    display: block;
+ul.product-list .product-item .btn-add-to-cart {
     text-align: center;
-    background: blue;
     padding: 10px 5px;
-    color: #fff;
-    cursor: pointer;
     font-size: 18px;
     margin-top: 10px;
 }

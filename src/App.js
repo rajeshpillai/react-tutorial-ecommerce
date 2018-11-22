@@ -2,19 +2,25 @@ import React, { Component } from 'react';
 import './App.css';
 import Products from './components/products'
 import Cart from './components/cart';
+
 class App extends Component {
+  constructor() {
+    super();
+    this.onAddToCart = this.onAddToCart.bind(this);
+  }
+
   state = {
     cart: [
       {
         product: {
           productId: 1,
-          count: 1,
+          cartId: +new Date(),
         },
       },
       {
         product: {
           productId: 2,
-          count: 2,
+          cartId: +new Date(),
         },
       }
     ],
@@ -78,6 +84,18 @@ class App extends Component {
 
     ]
   }
+
+  onAddToCart(productId) {
+    let newCartItem = {
+      productId: productId,
+      cartId: +new Date()
+    }
+
+    this.setState({
+      cart: [...this.state.cart, newCartItem]
+    });
+  }
+
   render() {
     return (
       <div className="App">
@@ -102,7 +120,7 @@ class App extends Component {
 
 
         </header>
-        <Products products={this.state.products} />
+        <Products products={this.state.products} onAddToCart={this.onAddToCart} />
       </div>
     );
   }

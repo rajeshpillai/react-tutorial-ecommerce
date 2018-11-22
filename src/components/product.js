@@ -11,7 +11,7 @@ export default class Product extends Component {
 
                 <img src={product.featured_image_url} alt="featured product"></img>
                 <div className="product-desc">{product.description}</div>
-                <div className="cta">Add to Cart</div>
+                <button onClick={(e) => { this.props.onAddToCart(product.id) }} className="btn-add-to-cart">Add to Cart</button>
             </div>
         )
     }

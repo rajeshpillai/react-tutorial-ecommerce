@@ -7,7 +7,7 @@ export default class Products extends Component {
         let products = this.props.products;
         let productView = products.map((product) => {
             return (
-                <Product key={product.id} product={product} />
+                <Product onAddToCart={this.props.onAddToCart} key={product.id} product={product} />
             )
         })
         return (
