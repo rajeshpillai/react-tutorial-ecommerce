@@ -10,6 +10,7 @@ const CartView = function (props) {
         return (
             <li key={item.cartId}>
                 <span>{item.product.title}</span><span className="price">{item.product.price}</span>
+                <span onClick={() => { props.onRemoveCartItem(item.cartId) }} className="remove-cart-item" role="img" aria-label="remove cart item">❎</span>
             </li>
         )
     });

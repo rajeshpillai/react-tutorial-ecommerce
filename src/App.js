@@ -10,6 +10,7 @@ class App extends Component {
   constructor() {
     super();
     this.onAddToCart = this.onAddToCart.bind(this);
+    this.onRemoveCartItem = this.onRemoveCartItem.bind(this);
   }
 
   state = {
@@ -116,6 +117,16 @@ class App extends Component {
     return cartProducts;
   }
 
+  onRemoveCartItem(cartId) {
+    let cart = this.state.cart.filter((c) => {
+      return c.product.cartId !== cartId;
+    });
+
+    this.setState({
+      cart
+    });
+  }
+
   onAddToCart(productId) {
     let newCartItem = {
       product: {
@@ -137,7 +148,7 @@ class App extends Component {
 
           <div className="cart-wrapper">
             <Cart items={this.state.cart} />
-            <CartView items={this.getAllCartsProduct()} />
+            <CartView onRemoveCartItem={this.onRemoveCartItem} items={this.getAllCartsProduct()} />
           </div>
 
 
