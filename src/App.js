@@ -83,7 +83,7 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <h3>Ecommerce</h3>
-          <span><Cart items={this.state.cart} /></span>
+          <Cart items={this.state.cart} />
         </header>
         <Products products={this.state.products} />
       </div>
