@@ -81,9 +81,26 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <h3>Ecommerce</h3>
-          <Cart items={this.state.cart} />
+        <header className="header">
+          <span className="logo-title">Ecommerce</span>
+
+          <div className="cart-wrapper">
+            <Cart items={this.state.cart} />
+            <div className="cart-view">
+              <div class="arrow-down"></div>
+              <ul className="cart-list">
+                <li><span>Produt One</span> <span>152/-</span></li>
+                <li><span>Produt Two</span> <span>152/-</span></li>
+
+              </ul>
+              <div className="cart-total">
+                Cart Total : <span class="float-right">152/-</span>
+              </div>
+            </div>
+
+          </div>
+
+
         </header>
         <Products products={this.state.products} />
       </div>

@@ -12,9 +12,9 @@ export default class Cart extends Component {
             return acc;
         }, 0);
         return (
-            <div className="cart">
-                {count}
-            </div>
+            <span className="cart">
+                <span className="cart-icon"> &#128722;</span>   {count}
+            </span>
         )
     }
 }

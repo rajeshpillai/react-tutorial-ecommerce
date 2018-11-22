@@ -1,30 +1,22 @@
-.App {
-  text-align: center;
+/* Reset the default style */
+
+*{
+  margin: 0px;
+  padding: 0px;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+.float-right{
+  float:right;
 }
 
-.App-header {
-  background-color: #282c34;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.float-left{
+  float:left;
 }
 
-.App-link {
-  color: #61dafb;
+.text-right {
+  text-align: right;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.text-left {
+  text-align: left;
 }
