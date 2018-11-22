@@ -31,6 +31,7 @@ class App extends Component {
       {
         id: 1,
         title: "Product 1",
+        price: 40,
         description: "Yet another product 1",
         featured_image_url: "https://placekitten.com/200/300",
         qoh: 1,
@@ -38,6 +39,7 @@ class App extends Component {
       {
         id: 2,
         title: "Product 2",
+        price: 40,
         description: "Yet another product 2",
         featured_image_url: "https://placebear.com/200/300",
         qoh: 3,
@@ -45,6 +47,7 @@ class App extends Component {
       {
         id: 3,
         title: "Product 2",
+        price: 140,
         description: "Yet another product 2",
         featured_image_url: "https://placebear.com/200/300",
         qoh: 3,
@@ -52,6 +55,7 @@ class App extends Component {
       {
         id: 4,
         title: "Product 2",
+        price: 50,
         description: "Yet another product 2",
         featured_image_url: "https://placebear.com/200/300",
         qoh: 3,
@@ -59,6 +63,7 @@ class App extends Component {
       {
         id: 5,
         title: "Product 2",
+        price: 100,
         description: "Yet another product 2",
         featured_image_url: "https://placebear.com/200/300",
         qoh: 3,
@@ -66,6 +71,7 @@ class App extends Component {
       {
         id: 6,
         title: "Product 2",
+        price: 200,
         description: "Yet another product 2",
         featured_image_url: "https://placebear.com/200/300",
         qoh: 3,
@@ -73,6 +79,7 @@ class App extends Component {
       {
         id: 7,
         title: "Product 2",
+        price: 10,
         description: "Yet another product 2",
         featured_image_url: "https://placebear.com/200/300",
         qoh: 3,
@@ -80,6 +87,7 @@ class App extends Component {
       {
         id: 8,
         title: "Product 2",
+        price: 50,
         description: "Yet another product 2",
         featured_image_url: "https://placebear.com/200/300",
         qoh: 3,
