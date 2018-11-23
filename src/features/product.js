@@ -2,6 +2,7 @@ import './products';
 import React, { Component } from 'react';
 import withModal from '../components/hoc/with-modal';
 import Rating from '../components/rating';
+// import Productimage from './productimage';
 
 class Product extends Component {
 
@@ -10,7 +11,8 @@ class Product extends Component {
         let productView = (
             <div className="product-item">
                 <h3 className="product-title">{product.title}</h3>
-                <img src={product.featured_image_url} alt="featured product"></img>
+                <img className="p-image" src={product.featured_image_url} alt="featured product"></img>
+                {/* <Productimage featured_image_url={product.featured_image_url} /> */}
                 <div className="product-desc">{product.description}</div>
                 <div>
                     <Rating rating={product.rating} onChangeRating={this.props.onChangeRating} />

@@ -9,7 +9,8 @@ export default class Products extends Component {
         let products = this.props.products;
         let productView = products.map((product) => {
             return (
-                <Product onAddToCart={this.props.onAddToCart} onChangeRating={(val)=>{this.props.onChangeRating(product.id,val)}} key={product.id} product={product} />
+                <Product onAddToCart={this.props.onAddToCart} onChangeRating={(val)=>{this.props.onChangeRating(product.id,val)}} key={product.id} product={product} 
+                 popupClass="p-image"/>
             )
         })
         return (
