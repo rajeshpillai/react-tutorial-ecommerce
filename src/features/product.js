@@ -2,7 +2,7 @@ import './products';
 import React, { Component } from 'react';
 import withModal from '../components/hoc/with-modal';
 import Rating from '../components/rating';
-// import Productimage from './productimage';
+import Image from '../components/image';
 
 class Product extends Component {
 
@@ -14,11 +14,10 @@ class Product extends Component {
         let product = this.props.product;
         const tagsView = product.tags.map((tag, i) => {
             return <React.Fragment key={tag} >
-                <a className="tag" href="#" onClick={() => {
+                <a className="tag" href="/" onClick={() => {
                     this.filterProductsByTag(tag);
                 }} >
                     {tag}
-                    {/* { i<product.tags.length-1 && <span className="tag">,</span>} */}
                 </a>
             </React.Fragment>;
         })
@@ -26,7 +25,8 @@ class Product extends Component {
         let productView =
             <div className="product-item">
                 <h3 className="product-title">{product.title}</h3>
-                <img src={product.featured_image_url} alt="featured product" />
+                <Image url={product.featured_image_url} />
+
                 <div className="product-desc">{product.description}</div>
                 <div className="text-center">
                     <Rating rating={product.rating} onChangeRating={this.props.onChangeRating} />
