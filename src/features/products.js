@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Product from './product';
 import './product.css'
+import withModal from '../components/hoc/with-modal';
 
 export default class Products extends Component {
     render() {
