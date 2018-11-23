@@ -27,11 +27,12 @@ export default class Product extends Component {
         return (
             <div >
                 {productView}
-                <Modal
+                {this.state.show && <Modal
                     onClose={this.showModal}
                     show={this.state.show}>
                     {productView}
                 </Modal>
+                }
             </div>
         )
     }
