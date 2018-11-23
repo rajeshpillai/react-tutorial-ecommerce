@@ -13,7 +13,7 @@ class Product extends Component {
     render() {
         let product = this.props.product;
         const tagsView =product.tags.map((tag,i)=>{
-            return <React.Fragment>
+            return <React.Fragment key={tag} >
                 <a className="tag" href="#" onClick={() => {
                     this.filterProductsByTag(tag);
                   }} >

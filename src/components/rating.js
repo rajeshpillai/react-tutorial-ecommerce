@@ -21,7 +21,7 @@ export default class Rating extends React.Component {
         
         const startView=[1,2,3,4,5].map(d=>{
             var fontcolor = (d<=this.state.rating)?"orange":"white";
-            return(<span className="pointer star" style={{color:fontcolor}} onClick={()=>this.saveRating(d)} >&#x2605;</span>)
+            return(<span key={d} className="pointer star" style={{color:fontcolor}} onClick={()=>this.saveRating(d)} >&#x2605;</span>)
         })            
         
 

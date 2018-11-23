@@ -8,7 +8,7 @@ const CartView = function (props) {
         console.log(item);
         cartTotal += item.product.price;
         return <li key={item.cartId}>
-            <span className="item-name"e>{item.product.title}</span>
+            <span className="item-name">{item.product.title}</span>
             <span className="float-right">
 
            

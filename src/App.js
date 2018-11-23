@@ -42,7 +42,7 @@ class App extends Component {
           "Yet another product 1. Yet another product 1. Yet another product 1. Yet another product 1. ",
         featured_image_url: "https://placekitten.com/200/300",
         qoh: 1,
-        rating: 1,
+        rating: 0,
         tags:["electronics","technical"]
       },
       {
