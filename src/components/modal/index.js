@@ -10,7 +10,7 @@ const backdropStyle = {
     left: 0,
     right: 0,
     backgroundColor: 'rgba(0,0,0,0.3)',
-    padding: 50
+    padding: 10
 }
 
 const modalStyle = {
@@ -65,22 +65,22 @@ export default class Modal extends React.Component {
 
         var modalUI = <div style={backdropStyle} className="modal">
             <div style={modalStyle}>
-              <button className="close" onClick={e => {
-                  this.onClose(e);
+                <button className="close" onClick={e => {
+                    this.onClose(e);
                 }}>
-                &times;
+                    &times;
               </button>
-                <div className="clearfix"/>
-              {this.props.children}
-              <div style={footerStyle}>
-                {/* <button className="float-right close" onClick={e => {
+                <div className="clearfix" />
+                {this.props.children}
+                <div style={footerStyle}>
+                    {/* <button className="float-right close" onClick={e => {
                     this.onClose(e);
                   }}>
                   Close
                 </button> */}
-              </div>
+                </div>
             </div>
-          </div>;
+        </div>;
 
         return ReactDOM.createPortal(
             modalUI,

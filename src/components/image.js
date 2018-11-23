@@ -37,11 +37,11 @@ export default class Image extends React.Component {
     }
     render() {
         return (
-            <div>
+            <React.Fragment>
                 {this.state.isLoaded ? null : <h3>Loading...</h3>}
                 {this.state.isError && <h3>Error loading...</h3>}
-                <img ref={(img) => this.img = img} alt="" />
-            </div>
+                <img className="p-image" ref={(img) => this.img = img} alt="" />
+            </React.Fragment>
         )
     }
 }

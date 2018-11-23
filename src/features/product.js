@@ -29,7 +29,6 @@ class Product extends Component {
                 <ErrorBoundary>
                     <Image url={product.featured_image_url} />
                 </ErrorBoundary>
-
                 <div className="product-desc">{product.description}</div>
                 <div className="text-center">
                     <Rating rating={product.rating} onChangeRating={this.props.onChangeRating} />

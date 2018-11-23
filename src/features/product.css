@@ -105,6 +105,11 @@ ul.product-list .product-item img {
     height: 150px;
 }
 
+.p-image {
+    width: 100%;
+    height: 100%;
+}
+
 ul.product-list .product-item h3.product-title{
     color: #484646;
     font-size: 17px;
