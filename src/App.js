@@ -12,6 +12,8 @@ class App extends Component {
     this.onAddToCart = this.onAddToCart.bind(this);
     this.onRemoveCartItem = this.onRemoveCartItem.bind(this);
     this.onChangeRating = this.onChangeRating.bind(this);
+    this.filterProductsByTag = this.filterProductsByTag.bind(this);
+    this.goBack = this.goBack.bind(this);
   }
 
   state = {
@@ -29,6 +31,7 @@ class App extends Component {
         }
       }
     ],
+    filterProducts:null,
     products: [
       {
         id: 1,
@@ -38,7 +41,8 @@ class App extends Component {
           "Yet another product 1. Yet another product 1. Yet another product 1. Yet another product 1. ",
         featured_image_url: "https://placekitten.com/200/300",
         qoh: 1,
-        rating: 1
+        rating: 1,
+        tags:["electronics","technical"]
       },
       {
         id: 2,
@@ -48,7 +52,8 @@ class App extends Component {
           "Yet another product 2. Yet another product 2. Yet another product 2. Yet another producroduct 2. ",
         featured_image_url: "https://placebear.com/200/300",
         qoh: 3,
-        rating: 2
+        rating: 2,
+        tags:["electronics","technical"]
       },
       {
         id: 3,
@@ -57,7 +62,8 @@ class App extends Component {
         description: "Yet another product 2",
         featured_image_url: "https://placebear.com/200/300",
         qoh: 3,
-        rating: 3
+        rating: 3,
+        tags:["electronics","photo"]
       },
       {
         id: 4,
@@ -66,7 +72,8 @@ class App extends Component {
         description: "Yet another product 2",
         featured_image_url: "https://placebear.com/200/300",
         qoh: 3,
-        rating: 4
+        rating: 4,
+        tags:["electronics","image"]
       },
       {
         id: 5,
@@ -75,7 +82,8 @@ class App extends Component {
         description: "Yet another product 2",
         featured_image_url: "https://placebear.com/200/300",
         qoh: 3,
-        rating: 5
+        rating: 5,
+        tags:["electronics","picture"]
       },
       {
         id: 6,
@@ -84,7 +92,8 @@ class App extends Component {
         description: "Yet another product 2",
         featured_image_url: "https://placebear.com/200/300",
         qoh: 3,
-        rating: 1
+        rating: 1,
+        tags:["electronics","cat"]
       },
       {
         id: 7,
@@ -93,7 +102,8 @@ class App extends Component {
         description: "Yet another product 2",
         featured_image_url: "https://placebear.com/200/300",
         qoh: 3,
-        rating: 3
+        rating: 3,
+        tags:["electronics","technical"]
       },
       {
         id: 8,
@@ -102,7 +112,8 @@ class App extends Component {
         description: "Yet another product 2",
         featured_image_url: "https://placebear.com/200/300",
         qoh: 3,
-        rating: 4
+        rating: 4,
+        tags:["electronics","technical"]
       }
     ]
   };
@@ -164,6 +175,23 @@ class App extends Component {
     });
   }
 
+  filterProductsByTag(tag){
+    let products = this.state.products;
+    products = products.filter(p => {
+      return p.tags.indexOf(tag) != -1;
+    });
+
+    this.setState({
+      filterProducts:products
+    });
+  }
+
+  goBack(){
+    this.setState({
+      filterProducts:null
+    });
+  }
+
   render() {
     return (
       <div className="App">
@@ -179,9 +207,11 @@ class App extends Component {
           </div>
         </header>
         <Products
-          products={this.state.products}
+          products={this.state.filterProducts? this.state.filterProducts: this.state.products}
           onAddToCart={this.onAddToCart}
           onChangeRating={this.onChangeRating}
+          filterProductsByTag={this.filterProductsByTag}
+          goBack ={this.goBack}
         />
 
         <div className="clearfix" />

@@ -7,9 +7,7 @@ const withModal = (WrappedComponent) => {
             isOpen: false
         }
 
-        onShow = (e) => {    
-            console.log("this.props.popupClass",this.props.popupClass)    ;
-            console.log("e.target.className",e.target.className);
+        onShow = (e) => {               
             if(this.props.popupClass){
                 if(e.target.className === this.props.popupClass){
                     this.setState({
