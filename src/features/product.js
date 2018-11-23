@@ -11,7 +11,7 @@ class Product extends Component {
         let productView =
             <div className="product-item">
             <h3 className="product-title">{product.title}</h3>
-            <img src={product.featured_image_url} alt="featured product" />
+            <img src={product.featured_image_url} className="p-image" alt="featured product" />
             <div className="product-desc">{product.description}</div>
             <div className="text-center">
               <Rating rating={product.rating} onChangeRating={this.props.onChangeRating} />
