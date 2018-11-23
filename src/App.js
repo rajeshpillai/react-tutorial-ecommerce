@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
-import Products from './components/products'
-import Cart from './components/cart';
-import CartView from './components/cartview';
+import Products from './features/products'
+import Cart from './features/cart';
+import CartView from './features/cartview';
 
 import uuidv1 from 'uuid/v1';
 

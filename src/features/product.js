@@ -1,6 +1,6 @@
 import './products';
 import React, { Component } from 'react';
-import Modal from './modal';
+import Modal from '../components/modal';
 
 export default class Product extends Component {
     state = {
@@ -15,7 +15,7 @@ export default class Product extends Component {
 
     showProduct = (product, modal) => {
         return (
-            <div className="product-item" onClick={modal && this.showModal}>
+            <div className="product-item" onClick={modal ? this.showModal : undefined}>
                 <h3 className="product-title">{product.title}</h3>
 
                 <img src={product.featured_image_url} alt="featured product"></img>
