@@ -6,6 +6,7 @@ import CartView from './features/cartview';
 
 import uuidv1 from 'uuid/v1';
 
+const PLACE_HOLDER_IMAGE_URL = "images/place-holder-250.png";
 class App extends Component {
   constructor() {
     super();
@@ -31,8 +32,8 @@ class App extends Component {
         }
       }
     ],
-    filterProducts:null,
-    selectedTag:null,
+    filterProducts: null,
+    selectedTag: null,
     products: [
       {
         id: 1,
@@ -40,10 +41,10 @@ class App extends Component {
         price: 40,
         description:
           "Yet another product 1. Yet another product 1. Yet another product 1. Yet another product 1. ",
-        featured_image_url: "https://placekitten.com/200/300",
+        featured_image_url: PLACE_HOLDER_IMAGE_URL,
         qoh: 1,
         rating: 0,
-        tags:["electronics","technical"]
+        tags: ["electronics", "technical"]
       },
       {
         id: 2,
@@ -51,60 +52,60 @@ class App extends Component {
         price: 40,
         description:
           "Yet another product 2. Yet another product 2. Yet another product 2. Yet another producroduct 2. ",
-        featured_image_url: "https://placebear.com/200/300",
+        featured_image_url: PLACE_HOLDER_IMAGE_URL,
         qoh: 3,
         rating: 2,
-        tags:["electronics","technical"]
+        tags: ["electronics", "technical"]
       },
       {
         id: 3,
         title: "Product 2",
         price: 140,
         description: "Yet another product 2",
-        featured_image_url: "https://placebear.com/200/300",
+        featured_image_url: PLACE_HOLDER_IMAGE_URL,
         qoh: 3,
         rating: 3,
-        tags:["electronics","photo"]
+        tags: ["electronics", "photo"]
       },
       {
         id: 4,
         title: "Product 2",
         price: 50,
         description: "Yet another product 2",
-        featured_image_url: "https://placebear.com/200/300",
+        featured_image_url: PLACE_HOLDER_IMAGE_URL,
         qoh: 3,
         rating: 4,
-        tags:["electronics","image"]
+        tags: ["electronics", "image"]
       },
       {
         id: 5,
         title: "Product 2",
         price: 100,
         description: "Yet another product 2",
-        featured_image_url: "https://placebear.com/200/300",
+        featured_image_url: PLACE_HOLDER_IMAGE_URL,
         qoh: 3,
         rating: 5,
-        tags:["electronics","picture"]
+        tags: ["electronics", "picture"]
       },
       {
         id: 6,
         title: "Product 2",
         price: 200,
         description: "Yet another product 2",
-        featured_image_url: "https://placebear.com/200/300",
+        featured_image_url: PLACE_HOLDER_IMAGE_URL,
         qoh: 3,
         rating: 1,
-        tags:["electronics","cat"]
+        tags: ["electronics", "cat"]
       },
       {
         id: 7,
         title: "Product 2",
         price: 10,
         description: "Yet another product 2",
-        featured_image_url: "https://placebear.com/200/300",
+        featured_image_url: PLACE_HOLDER_IMAGE_URL,
         qoh: 3,
         rating: 3,
-        tags:["electronics","technical"]
+        tags: ["electronics", "technical"]
       },
       {
         id: 8,
@@ -114,7 +115,7 @@ class App extends Component {
         featured_image_url: "https://placebear.com/200/300",
         qoh: 3,
         rating: 4,
-        tags:["electronics","technical"]
+        tags: ["electronics", "technical"]
       }
     ]
   };
@@ -176,22 +177,22 @@ class App extends Component {
     });
   }
 
-  filterProductsByTag(tag){
+  filterProductsByTag(tag) {
     let products = this.state.products;
     products = products.filter(p => {
       return p.tags.indexOf(tag) != -1;
     });
 
     this.setState({
-      filterProducts:products,
-      selectedTag:tag
+      filterProducts: products,
+      selectedTag: tag
     });
   }
 
-  goBack(){
+  goBack() {
     this.setState({
-      filterProducts:null,
-      selectedTag:null
+      filterProducts: null,
+      selectedTag: null
     });
   }
 
@@ -210,17 +211,17 @@ class App extends Component {
           </div>
         </header>
         <div className="container flex-wrapper">
-    <h1 className="product-title">Products {this.state.selectedTag && <span className="tagname">- {this.state.selectedTag}</span>}</h1>
-              {this.state.selectedTag && <a className="back" href="#" onClick={this.goBack}>
-                &#8656; back
-               </a> }
-            </div>
+          <h1 className="product-title">Products {this.state.selectedTag && <span className="tagname">- {this.state.selectedTag}</span>}</h1>
+          {this.state.selectedTag && <a className="back" href="#" onClick={this.goBack}>
+            &#8656; back
+               </a>}
+        </div>
         <Products
-          products={this.state.filterProducts? this.state.filterProducts: this.state.products}
+          products={this.state.filterProducts ? this.state.filterProducts : this.state.products}
           onAddToCart={this.onAddToCart}
           onChangeRating={this.onChangeRating}
           filterProductsByTag={this.filterProductsByTag}
-          goBack ={this.goBack}
+          goBack={this.goBack}
         />
 
         <div className="clearfix" />

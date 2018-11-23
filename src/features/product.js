@@ -5,41 +5,41 @@ import Rating from '../components/rating';
 // import Productimage from './productimage';
 
 class Product extends Component {
-   
-    filterProductsByTag=(tag)=>{
+
+    filterProductsByTag = (tag) => {
         this.props.filterProductsByTag(tag);
     }
 
     render() {
         let product = this.props.product;
-        const tagsView =product.tags.map((tag,i)=>{
+        const tagsView = product.tags.map((tag, i) => {
             return <React.Fragment key={tag} >
                 <a className="tag" href="#" onClick={() => {
                     this.filterProductsByTag(tag);
-                  }} >
-                {tag}
-                  {/* { i<product.tags.length-1 && <span className="tag">,</span>} */}
+                }} >
+                    {tag}
+                    {/* { i<product.tags.length-1 && <span className="tag">,</span>} */}
                 </a>
-              </React.Fragment>;
+            </React.Fragment>;
         })
 
         let productView =
             <div className="product-item">
-            <h3 className="product-title">{product.title}</h3>
-            <img src={product.featured_image_url} className="p-image" alt="featured product" />
-            <div className="product-desc">{product.description}</div>
-            <div className="text-center">
-              <Rating rating={product.rating} onChangeRating={this.props.onChangeRating} />
-            </div>
+                <h3 className="product-title">{product.title}</h3>
+                <img src={product.featured_image_url} alt="featured product" />
+                <div className="product-desc">{product.description}</div>
                 <div className="text-center">
-                {tagsView}
-            </div>
-            <button onClick={e => {
-                this.props.onAddToCart(product.id);
-              }} className="btn-add-to-cart">
-              Add to Cart
+                    <Rating rating={product.rating} onChangeRating={this.props.onChangeRating} />
+                </div>
+                <div className="text-center">
+                    {tagsView}
+                </div>
+                <button onClick={e => {
+                    this.props.onAddToCart(product.id);
+                }} className="btn-add-to-cart">
+                    Add to Cart
             </button>
-          </div>;
+            </div>;
 
         return <React.Fragment>{productView}</React.Fragment>;
     }
