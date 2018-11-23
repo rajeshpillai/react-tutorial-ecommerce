@@ -27,7 +27,6 @@ header.header {
     color: #000;
     position: fixed;
     right: 64px;
-
     visibility: hidden;
     opacity: 0;
     transition: visibility 0s, opacity 0.5s linear;
@@ -61,7 +60,6 @@ header.header {
 .cart-total {
     padding: 5px;
     font-weight: bold;
-    border-top: 1px solid #EEE;
     border-bottom: 1px solid #EEE;
 }
 /*  header style - End */
@@ -178,8 +176,9 @@ ul.product-list .product-item .product-desc {
     color: #000000;
     text-align: center;
     background: #bbbbbb;
-    padding: 5px;
-    height: 70px;
+    padding: 5px 10px;
+    height: 40px;
+    max-height: 70px;
     overflow: hidden;
     display: -ms-flexbox;
     display: flex;
@@ -197,9 +196,11 @@ ul.product-list .product-item .product-desc {
 
 /* price */
 .price {
-    margin-left: 10px;
-    padding: 2px 10px;
-    background-color: coral;
+          margin: 5px;
+          padding: 2px 4px;
+          background-color: #03A9F4;
+          color: #fff;
+          font-size: 12px;
 }
 
 .price-total {
@@ -209,5 +210,20 @@ ul.product-list .product-item .product-desc {
 }
 
 .remove-cart-item {
-    color: red;
+    margin: 5px;
+    padding: 2px 4px;
+    background-color: red;
+    color: #fff;
+    font-size: 12px;
+}
+
+.item-name{
+    font-size:12px;
+}
+
+.view-cart-link {
+    text-align: center;
+    font-size: 14px;
+    text-decoration: underline;
+    color: #2196F3;
 }

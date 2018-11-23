@@ -11,6 +11,14 @@
 .clearfix {
   clear: both;
 }
+.pointer {
+  cursor: pointer;
+}
+
+.star {
+  font-size: 20px;
+}
+
 footer{
   height: 35px;
   line-height: 35px;
@@ -21,6 +29,14 @@ footer h3 {
   font-size: 14px;
   font-weight: normal;
   color: #fff;
+}
+.tag {
+  background: yellow;
+  border-radius: 4px;
+  padding: 2px 5px;
+  font-size: 12px;
+  font-weight: normal;
+  margin-right: 1px;
 }
 .modal .close {
           width: 20px;

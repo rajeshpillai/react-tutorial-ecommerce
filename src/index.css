@@ -12,11 +12,3 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-
-.pointer{
-  cursor: pointer;
-}
-
-.star{
-  font-size: 20px;
-}

@@ -7,12 +7,20 @@ const CartView = function (props) {
     let cartItemView = cartItems.map((item) => {
         console.log(item);
         cartTotal += item.product.price;
-        return (
-            <li key={item.cartId}>
-                <span>{item.product.title}</span><span className="price">{item.product.price}</span>
-                <span onClick={() => { props.onRemoveCartItem(item.cartId) }} className="remove-cart-item" role="img" aria-label="remove cart item">❎</span>
-            </li>
-        )
+        return <li key={item.cartId}>
+            <span className="item-name"e>{item.product.title}</span>
+            <span className="float-right">
+
+           
+            <span className="price">$ {item.product.price}</span>
+            <span onClick={() => {
+                props.onRemoveCartItem(item.cartId);
+              }} className="remove-cart-item" role="img" aria-label="remove cart item">
+              &#x2613;
+            </span>
+            </span>
+            <hr className="clearfix" />
+          </li>;
     });
 
     return (
@@ -22,7 +30,10 @@ const CartView = function (props) {
                 {cartItemView}
             </ul>
             <div className="cart-total">
-                Cart Total : <span className="price-total">{cartTotal}/-</span>
+                Cart Total :  <span className="price-total">${cartTotal}</span>
+            </div>
+            <div className="view-cart-link">
+                <span>View Cart</span>
             </div>
         </div>
     );
