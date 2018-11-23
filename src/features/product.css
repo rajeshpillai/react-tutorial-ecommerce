@@ -71,16 +71,22 @@ header.header {
 ul.product-list{
     display: flex;
     margin-top: 0px;
-    background: #AEAEae;
+    background: #efeae3;
     width: 100%;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    margin-top: 20px;
 }
 ul.product-list .product-item {
     margin: 5px;
     padding: 10px;
-    background: #eee;
+    background: #cecdcb;
+}
+
+ul.product-list .product-item img {
+    width: 200px;
+    height: 300px;
 }
 
 ul.product-list .product-item h3.product-title{
@@ -90,19 +96,74 @@ ul.product-list .product-item h3.product-title{
     margin-bottom: 10px;
 }
 
+
 ul.product-list .product-item .btn-add-to-cart {
     text-align: center;
     padding: 10px 5px;
-    font-size: 18px;
     margin-top: 10px;
+    display: block;
+    width: 100%;
+    background: #00BCD4;
+    color: #000;
+    font-size: 16px;
+    font-weight: normal;
+    outline: none;
+    border: none;
+    cursor: pointer;
 }
 
 ul.product-list .product-item .product-desc {
     font-size: 15px;
     line-height: 30px;
-    color: #524c4c;
+    color: #403f3f;
     text-align: center;
+    background: #d8d5d5;
+    margin-top: 5px;
 }
+
+
+/* Modal - Start */
+
+.modal .product-item {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -ms-flex-align: center;
+        align-items: center;
+        background: #dad3d3;
+        padding: 10px;
+}
+
+.modal .product-item h3.product-title {
+    text-align: center;
+    margin-bottom: 15px;
+    display: block;
+    /* background: #afa1a1; */
+    width: 100%;
+    padding: 5px;
+    font-size: 18px;
+    font-weight: normal;
+}
+
+.modal .product-item .btn-add-to-cart {
+    text-align: center;
+    padding: 10px 5px;
+    margin-top: 10px;
+    display: block;
+    width: 100%;
+    background: #00BCD4;
+    color: #000;
+    font-size: 16px;
+    font-weight: normal;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+
+/* Modal - End */
+
 
 /* Product style - End */
 

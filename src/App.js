@@ -92,6 +92,38 @@ class App extends Component {
         description: "Yet another product 2",
         featured_image_url: "https://placebear.com/200/300",
         qoh: 3,
+      },
+      {
+        id: 8,
+        title: "Product 2",
+        price: 50,
+        description: "Yet another product 2",
+        featured_image_url: "https://placebear.com/200/300",
+        qoh: 3,
+      },
+      {
+        id: 8,
+        title: "Product 2",
+        price: 50,
+        description: "Yet another product 2",
+        featured_image_url: "https://placebear.com/200/300",
+        qoh: 3,
+      },
+      {
+        id: 8,
+        title: "Product 2",
+        price: 50,
+        description: "Yet another product 2",
+        featured_image_url: "https://placebear.com/200/300",
+        qoh: 3,
+      },
+      {
+        id: 8,
+        title: "Product 2",
+        price: 50,
+        description: "Yet another product 2",
+        featured_image_url: "https://placebear.com/200/300",
+        qoh: 3,
       }
 
     ]
@@ -154,6 +186,11 @@ class App extends Component {
 
         </header>
         <Products products={this.state.products} onAddToCart={this.onAddToCart} />
+      
+        <div className="clearfix"></div>
+        <footer>
+          <h3>Algorisys Technologies Private Limited</h3>
+        </footer>
       </div>
     );
   }

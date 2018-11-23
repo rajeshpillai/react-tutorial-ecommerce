@@ -5,6 +5,36 @@
   padding: 0px;
 }
 
+.App {
+      background: #efeae3;
+}
+.clearfix {
+  clear: both;
+}
+footer{
+  height: 35px;
+  line-height: 35px;
+  background: #474646;
+}
+footer h3 {
+  text-align: center;
+  font-size: 14px;
+  font-weight: normal;
+  color: #fff;
+}
+.modal .close {
+          width: 20px;
+          height: 20px;
+          font-size: 21px;
+          line-height: 20px;
+          background: #fff;
+          border: none;
+          font-weight: bold;
+          float: right;
+          cursor: pointer;
+          margin-bottom: 6px;
+          outline: none;
+}
 .float-right{
   float:right;
 }
