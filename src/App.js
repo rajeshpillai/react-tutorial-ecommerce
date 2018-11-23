@@ -11,6 +11,7 @@ class App extends Component {
     super();
     this.onAddToCart = this.onAddToCart.bind(this);
     this.onRemoveCartItem = this.onRemoveCartItem.bind(this);
+    this.onChangeRating = this.onChangeRating.bind(this);
   }
 
   state = {
@@ -36,6 +37,7 @@ class App extends Component {
         description: "Yet another product 1",
         featured_image_url: "https://placekitten.com/200/300",
         qoh: 1,
+        rating:1
       },
       {
         id: 2,
@@ -44,6 +46,7 @@ class App extends Component {
         description: "Yet another product 2",
         featured_image_url: "https://placebear.com/200/300",
         qoh: 3,
+        rating:2
       },
       {
         id: 3,
@@ -52,6 +55,7 @@ class App extends Component {
         description: "Yet another product 2",
         featured_image_url: "https://placebear.com/200/300",
         qoh: 3,
+        rating:3
       },
       {
         id: 4,
@@ -60,6 +64,7 @@ class App extends Component {
         description: "Yet another product 2",
         featured_image_url: "https://placebear.com/200/300",
         qoh: 3,
+        rating:4
       },
       {
         id: 5,
@@ -68,6 +73,7 @@ class App extends Component {
         description: "Yet another product 2",
         featured_image_url: "https://placebear.com/200/300",
         qoh: 3,
+        rating:5
       },
       {
         id: 6,
@@ -76,6 +82,7 @@ class App extends Component {
         description: "Yet another product 2",
         featured_image_url: "https://placebear.com/200/300",
         qoh: 3,
+        rating:1
       },
       {
         id: 7,
@@ -84,6 +91,7 @@ class App extends Component {
         description: "Yet another product 2",
         featured_image_url: "https://placebear.com/200/300",
         qoh: 3,
+        rating:3
       },
       {
         id: 8,
@@ -92,6 +100,7 @@ class App extends Component {
         description: "Yet another product 2",
         featured_image_url: "https://placebear.com/200/300",
         qoh: 3,
+        rating:4
       }
 
     ]
@@ -140,6 +149,20 @@ class App extends Component {
     });
   }
 
+  onChangeRating(productId,rating){
+    let products = this.state.products;
+    products = products.map((p) => {
+      if (p.id === productId){
+        p.rating = rating;
+      }
+      return p;
+    });
+   
+    this.setState({
+      products
+    });
+  }
+
   render() {
     return (
       <div className="App">
@@ -150,10 +173,8 @@ class App extends Component {
             <Cart items={this.state.cart} />
             <CartView onRemoveCartItem={this.onRemoveCartItem} items={this.getAllCartsProduct()} />
           </div>
-
-
         </header>
-        <Products products={this.state.products} onAddToCart={this.onAddToCart} />
+        <Products products={this.state.products} onAddToCart={this.onAddToCart} onChangeRating={this.onChangeRating} />
       </div>
     );
   }
