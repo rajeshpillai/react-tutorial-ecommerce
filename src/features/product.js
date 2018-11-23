@@ -13,14 +13,14 @@ class Product extends Component {
     render() {
         let product = this.props.product;
         const tagsView =product.tags.map((tag,i)=>{
-            return(
-                <React.Fragment>
-                    <a href="#" onClick={()=>{this.filterProductsByTag(tag)}}>
-                        <span className="tag">{tag}</span>
-                        {/* { i<product.tags.length-1 && <span className="tag">,</span>} */}
-                    </a>
-                </React.Fragment>
-            )
+            return <React.Fragment>
+                <a className="tag" href="#" onClick={() => {
+                    this.filterProductsByTag(tag);
+                  }} >
+                {tag}
+                  {/* { i<product.tags.length-1 && <span className="tag">,</span>} */}
+                </a>
+              </React.Fragment>;
         })
 
         let productView =
@@ -31,7 +31,7 @@ class Product extends Component {
             <div className="text-center">
               <Rating rating={product.rating} onChangeRating={this.props.onChangeRating} />
             </div>
-            <div>
+                <div className="text-center">
                 {tagsView}
             </div>
             <button onClick={e => {

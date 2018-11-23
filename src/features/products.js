@@ -16,11 +16,14 @@ export default class Products extends Component {
                  popupClass="p-image" filterProductsByTag={this.props.filterProductsByTag}/>
             )
         })
-        return (
-            <ul className="product-list">
-            {/* <div><a href="#" onClick={this.goBack}>back</a></div> */}
-                {productView}
-            </ul>
-        )
+        return <React.Fragment>
+            <div className="container flex-wrapper">
+                <h1 className="product-title">Products - Technical</h1>
+              <a className="back" href="#" onClick={this.goBack}>
+                &#8656; back
+              </a>
+            </div>
+            <ul className="product-list">{productView}</ul>
+          </React.Fragment>;
     }
 }

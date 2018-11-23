@@ -5,6 +5,17 @@
   padding: 0px;
 }
 
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+
+
+.flex-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
 .App {
       background: #efeae3;
 }
@@ -31,12 +42,14 @@ footer h3 {
   color: #fff;
 }
 .tag {
-  background: yellow;
-  border-radius: 4px;
-  padding: 2px 5px;
-  font-size: 12px;
-  font-weight: normal;
-  margin-right: 1px;
+      background: #CDDC39;
+      border-radius: 4px;
+      padding: 0px 5px;
+      font-size: 11px;
+      font-weight: normal;
+      margin-right: 2px;
+      color: #000;
+      text-decoration: none;
 }
 .modal .close {
           width: 20px;
