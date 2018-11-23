@@ -32,6 +32,7 @@ class App extends Component {
       }
     ],
     filterProducts:null,
+    selectedTag:null,
     products: [
       {
         id: 1,
@@ -182,13 +183,15 @@ class App extends Component {
     });
 
     this.setState({
-      filterProducts:products
+      filterProducts:products,
+      selectedTag:tag
     });
   }
 
   goBack(){
     this.setState({
-      filterProducts:null
+      filterProducts:null,
+      selectedTag:null
     });
   }
 
@@ -206,6 +209,12 @@ class App extends Component {
             />
           </div>
         </header>
+        <div className="container flex-wrapper">
+    <h1 className="product-title">Products {this.state.selectedTag && <span className="tagname">- {this.state.selectedTag}</span>}</h1>
+              {this.state.selectedTag && <a className="back" href="#" onClick={this.goBack}>
+                &#8656; back
+               </a> }
+            </div>
         <Products
           products={this.state.filterProducts? this.state.filterProducts: this.state.products}
           onAddToCart={this.onAddToCart}

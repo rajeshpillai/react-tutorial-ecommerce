@@ -3,10 +3,7 @@ import Product from './product';
 import './product.css'
 import withModal from '../components/hoc/with-modal';
 
-export default class Products extends Component {
-    goBack=()=>{
-        this.props.goBack();
-    }
+export default class Products extends Component {   
     render() {
         
         let products = this.props.products;
@@ -16,13 +13,7 @@ export default class Products extends Component {
                  popupClass="p-image" filterProductsByTag={this.props.filterProductsByTag}/>
             )
         })
-        return <React.Fragment>
-            <div className="container flex-wrapper">
-                <h1 className="product-title">Products - Technical</h1>
-              <a className="back" href="#" onClick={this.goBack}>
-                &#8656; back
-              </a>
-            </div>
+        return <React.Fragment>           
             <ul className="product-list">{productView}</ul>
           </React.Fragment>;
     }

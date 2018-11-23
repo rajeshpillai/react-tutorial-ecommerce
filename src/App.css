@@ -51,6 +51,9 @@ footer h3 {
       color: #000;
       text-decoration: none;
 }
+.tagname{
+  text-transform: capitalize;
+}
 .modal .close {
           width: 20px;
           height: 20px;
