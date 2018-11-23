@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 
 // gray background
@@ -27,8 +28,16 @@ const footerStyle = {
     bottom: 20
 };
 
+const modalRoot = document.getElementById("modal-root");
+
 export default class Modal extends React.Component {
+    constructor(props) {
+        super(props);
+        this.el = document.createElement("div");
+    }
+
     onClose = (e) => {
+        e.stopPropagation(); // todo
         this.props.onClose && this.props.onClose(e);
     }
 
@@ -41,17 +50,20 @@ export default class Modal extends React.Component {
 
     componentDidMount() {
         document.addEventListener("keyup", this.onKeyUp);
+        modalRoot.appendChild(this.el);
     }
 
     componentWillUnmount() {
         document.removeEventListener("keyup", this.onKeyUp);
+        modalRoot.removeChild(this.el);
     }
 
     render() {
         if (!this.props.show) {
             return null;
         }
-        return (
+
+        var modalUI = (
             <div style={backdropStyle}>
                 <div style={modalStyle}>
                     {this.props.children}
@@ -62,7 +74,12 @@ export default class Modal extends React.Component {
                     </div>
                 </div>
             </div>
-        )
+        );
+
+        return ReactDOM.createPortal(
+            modalUI,
+            this.el,
+        );
     }
 }
 
