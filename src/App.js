@@ -6,7 +6,7 @@ import CartView from './features/cartview';
 
 import uuidv1 from 'uuid/v1';
 
-const PLACE_HOLDER_IMAGE_URL = "images/place-holder-250.png";
+const PLACE_HOLDER_IMAGE_URL = "images/ph-tech.jpg";
 class App extends Component {
   constructor() {
     super();
