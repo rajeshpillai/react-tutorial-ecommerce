@@ -175,6 +175,11 @@ class App extends Component {
           </div>
         </header>
         <Products products={this.state.products} onAddToCart={this.onAddToCart} onChangeRating={this.onChangeRating} />
+      
+        <div className="clearfix"></div>
+        <footer>
+          <h3>Algorisys Technologies Private Limited</h3>
+        </footer>
       </div>
     );
   }

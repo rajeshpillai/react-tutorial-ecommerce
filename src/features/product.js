@@ -20,11 +20,7 @@ class Product extends Component {
             </div>
         );
 
-        return (
-            <div >
-                {productView}
-            </div>
-        )
+        return <React.Fragment>{productView}</React.Fragment>;
     }
 }
 

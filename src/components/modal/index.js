@@ -63,18 +63,24 @@ export default class Modal extends React.Component {
             return null;
         }
 
-        var modalUI = (
-            <div style={backdropStyle}>
-                <div style={modalStyle}>
-                    {this.props.children}
-                    <div style={footerStyle}>
-                        <button onClick={(e) => { this.onClose(e) }}>
-                            Close
-                        </button>
-                    </div>
-                </div>
+        var modalUI = <div style={backdropStyle} className="modal">
+            <div style={modalStyle}>
+              <button className="close" onClick={e => {
+                  this.onClose(e);
+                }}>
+                &times;
+              </button>
+                <div className="clearfix"/>
+              {this.props.children}
+              <div style={footerStyle}>
+                {/* <button className="float-right close" onClick={e => {
+                    this.onClose(e);
+                  }}>
+                  Close
+                </button> */}
+              </div>
             </div>
-        );
+          </div>;
 
         return ReactDOM.createPortal(
             modalUI,
