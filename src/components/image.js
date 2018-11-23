@@ -23,6 +23,7 @@ export default class Image extends React.Component {
         this.load(this.img);
     }
 
+
     onImageLoadError = () => {
         this.setState({
             isError: true

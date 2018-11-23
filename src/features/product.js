@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import withModal from '../components/hoc/with-modal';
 import Rating from '../components/rating';
 import Image from '../components/image';
+import ErrorBoundary from '../components/error-boundary';
 
 class Product extends Component {
 
@@ -25,7 +26,9 @@ class Product extends Component {
         let productView =
             <div className="product-item">
                 <h3 className="product-title">{product.title}</h3>
-                <Image url={product.featured_image_url} />
+                <ErrorBoundary>
+                    <Image url={product.featured_image_url} />
+                </ErrorBoundary>
 
                 <div className="product-desc">{product.description}</div>
                 <div className="text-center">
